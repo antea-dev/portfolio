@@ -1,100 +1,108 @@
-import React, { StrictMode, useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import { ArrowUpRight, Code2, Github, GraduationCap, Linkedin, Mail, Sparkles } from 'lucide-react';
-import './styles.css';
+import React, { StrictMode, useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  ArrowUpRight,
+  Code2,
+  Github,
+  GraduationCap,
+  Linkedin,
+  Mail,
+  Sparkles,
+} from "lucide-react";
+import "./styles.css";
 
 const projects = [
   {
-    number: '01',
-    title: 'Sweet Frost',
-    category: 'E-commerce UI',
+    number: "01",
+    title: "Sweet Frost",
+    category: "E-commerce UI",
     description:
-      'A pastel ice cream shop with responsive layouts, cart flow, animated navigation, product cards, and a polished checkout screen.',
-    tags: ['React', 'Vite', 'Responsive UI', 'Cart UX'],
-    preview: 'preview-sweet-frost',
-    image: '/assets/sweet-frost-home.png',
-    href: 'https://icecreamshop-theta.vercel.app/',
+      "A pastel ice cream shop with responsive layouts, cart flow, animated navigation, product cards, and a polished checkout screen.",
+    tags: ["React", "Vite", "Responsive UI", "Cart UX"],
+    preview: "preview-sweet-frost",
+    image: "/assets/sweet-frost-home.png",
+    href: "https://icecreamshop-theta.vercel.app/",
   },
   {
-    number: '02',
-    title: 'Lumora',
-    category: 'Finance Dashboard',
+    number: "02",
+    title: "Lumora",
+    category: "Finance Dashboard",
     description:
-      'A dark financial dashboard with dense data cards, analytics sections, chart styling, and a polished SaaS interface.',
-    tags: ['React', 'Dashboard UI', 'Charts', 'Dark Theme'],
-    preview: 'preview-lumora',
-    image: '/assets/lumora-dashboard.png',
-    href: 'https://lumora-coral.vercel.app',
+      "A dark financial dashboard with dense data cards, analytics sections, chart styling, and a polished SaaS interface.",
+    tags: ["React", "Dashboard UI", "Charts", "Dark Theme"],
+    preview: "preview-lumora",
+    image: "/assets/lumora-dashboard.png",
+    href: "https://lumora-coral.vercel.app",
   },
   {
-    number: '03',
-    title: 'Kind Rituals',
-    category: 'Luxury Landing Page',
+    number: "03",
+    title: "Kind Rituals",
+    category: "Luxury Landing Page",
     description:
-      'A calm beauty and skincare landing page with editorial typography, refined spacing, and premium responsive presentation.',
-    tags: ['Landing Page', 'Typography', 'CSS', 'Responsive'],
-    preview: 'preview-kind-rituals',
-    image: '/assets/kind-rituals.png',
-    href: 'https://kind-rituals.vercel.app',
+      "A calm beauty and skincare landing page with editorial typography, refined spacing, and premium responsive presentation.",
+    tags: ["Landing Page", "Typography", "CSS", "Responsive"],
+    preview: "preview-kind-rituals",
+    image: "/assets/kind-rituals.png",
+    href: "https://kind-rituals.vercel.app",
   },
 ];
 
 const skills = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'React',
-  'Responsive UI',
-  'Animations',
-  'Git',
-  'Accessibility',
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Responsive UI",
+  "Animations",
+  "Git",
+  "Accessibility",
 ];
 
 const experience = [
   {
     icon: GraduationCap,
-    title: 'Algebra Front-End Developer',
-    text: 'Completed the Front-End Developer program at Algebra, building a stronger base in modern web development.',
+    title: "Algebra Front-End Developer",
+    text: "Completed the Front-End Developer program at Algebra, building a stronger base in modern web development.",
   },
   {
     icon: Code2,
-    title: 'Self-taught coding practice',
-    text: 'Learned a lot independently through projects, problem solving, and steady practice after starting from mathematics and physics.',
+    title: "Self-taught coding practice",
+    text: "Learned a lot independently through projects, problem solving, and steady practice after starting from mathematics and physics.",
   },
   {
     icon: Sparkles,
-    title: 'Front-end focus',
-    text: 'Most drawn to responsive layouts, clean UI, animations, and the small interaction details that make websites feel alive.',
+    title: "Front-end focus",
+    text: "Most drawn to responsive layouts, clean UI, animations, and the small interaction details that make websites feel alive.",
   },
 ];
 
 const stackGroups = [
   {
-    title: 'Core',
-    items: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+    title: "Core",
+    items: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
   },
   {
-    title: 'Frameworks',
-    items: ['React', 'Vite', 'Component-based UI'],
+    title: "Frameworks",
+    items: ["React", "Vite", "Component-based UI"],
   },
   {
-    title: 'Workflow',
-    items: ['Git', 'GitHub', 'Figma basics', 'Accessibility basics'],
+    title: "Workflow",
+    items: ["Git", "GitHub", "Figma basics", "Accessibility basics"],
   },
 ];
 
 function useReveal() {
   useEffect(() => {
-    const elements = document.querySelectorAll('.reveal');
+    const elements = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
           }
         });
       },
-      { threshold: 0.18 }
+      { threshold: 0.18 },
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -104,31 +112,31 @@ function useReveal() {
 
 function useCursor() {
   useEffect(() => {
-    const cursor = document.querySelector('.cursor');
-    const finePointer = window.matchMedia('(pointer: fine)').matches;
+    const cursor = document.querySelector(".cursor");
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
 
     if (!cursor || !finePointer) return undefined;
 
     const moveCursor = (event) => {
-      cursor.classList.add('is-visible');
+      cursor.classList.add("is-visible");
       cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
     };
 
-    const setActive = () => cursor.classList.add('is-active');
-    const unsetActive = () => cursor.classList.remove('is-active');
-    const targets = document.querySelectorAll('a, button, .project');
+    const setActive = () => cursor.classList.add("is-active");
+    const unsetActive = () => cursor.classList.remove("is-active");
+    const targets = document.querySelectorAll("a, button, .project");
 
-    window.addEventListener('pointermove', moveCursor);
+    window.addEventListener("pointermove", moveCursor);
     targets.forEach((target) => {
-      target.addEventListener('pointerenter', setActive);
-      target.addEventListener('pointerleave', unsetActive);
+      target.addEventListener("pointerenter", setActive);
+      target.addEventListener("pointerleave", unsetActive);
     });
 
     return () => {
-      window.removeEventListener('pointermove', moveCursor);
+      window.removeEventListener("pointermove", moveCursor);
       targets.forEach((target) => {
-        target.removeEventListener('pointerenter', setActive);
-        target.removeEventListener('pointerleave', unsetActive);
+        target.removeEventListener("pointerenter", setActive);
+        target.removeEventListener("pointerleave", unsetActive);
       });
     };
   }, []);
@@ -178,12 +186,14 @@ function Hero() {
     <section className="hero section">
       <div className="hero-copy">
         <p className="eyebrow reveal">Front-End Developer</p>
-        <h1 className="reveal">I build interfaces where logic meets feeling.</h1>
+        <h1 className="reveal">
+          I build interfaces where logic meets feeling.
+        </h1>
         <p className="hero-text reveal">
-          My path started with mathematics and physics, then coding pulled me in. I
-          learned a lot on my own, trained through Algebra&apos;s Front-End Developer
-          program, and found the part of software I love most: creating thoughtful,
-          animated experiences for the web.
+          My path started with mathematics and physics, then coding pulled me
+          in. I learned a lot on my own, trained through Algebra&apos;s
+          Front-End Developer program, and found the part of software I love
+          most: creating thoughtful, animated experiences for the web.
         </p>
         <div className="hero-actions reveal">
           <a className="button primary magnetic" href="#work">
@@ -197,7 +207,9 @@ function Hero() {
       </div>
 
       <div className="portrait-wrap reveal" aria-label="Portrait area">
-        <div className={`portrait-card ${hasPortrait ? 'has-portrait' : 'is-empty'}`}>
+        <div
+          className={`portrait-card ${hasPortrait ? "has-portrait" : "is-empty"}`}
+        >
           <img
             src="/assets/profile.png"
             alt="Portrait of Antea"
@@ -235,19 +247,20 @@ function About() {
       <div className="section-label reveal">About</div>
       <div className="about-grid">
         <h2 className="reveal">
-          Mathematics taught me structure. Physics taught me curiosity. Front-end
-          development gave both a place to move.
+          Mathematics taught me structure. Physics taught me curiosity.
+          Front-end development gave both a place to move.
         </h2>
         <div className="about-copy reveal">
           <p>
             I enjoy the exactness of code and the human side of design: spacing,
-            rhythm, responsiveness, micro-interactions, and the small details that
-            make a site feel clear and alive.
+            rhythm, responsiveness, micro-interactions, and the small details
+            that make a site feel clear and alive.
           </p>
           <p>
-            I completed the Front-End Developer program at Algebra and keep building
-            projects to sharpen my craft. I am especially drawn to clean interfaces,
-            playful transitions, and code that stays simple enough to keep improving.
+            I completed the Front-End Developer program at Algebra and keep
+            building projects to sharpen my craft. I am especially drawn to
+            clean interfaces, playful transitions, and code that stays simple
+            enough to keep improving.
           </p>
         </div>
       </div>
@@ -272,8 +285,8 @@ function Experience() {
       <div className="section-top reveal">
         <div className="section-label">Experience & Stack</div>
         <p>
-          A mix of formal front-end training, independent learning, and a practical
-          toolset for building polished web interfaces.
+          A mix of formal front-end training, independent learning, and a
+          practical toolset for building polished web interfaces.
         </p>
       </div>
 
@@ -310,7 +323,7 @@ function Work() {
     <section className="work section" id="work">
       <div className="section-top reveal">
         <div className="section-label">Selected Work</div>
-        <p>Three projects for now, with room to swap in your final names, screenshots, and links.</p>
+        <p>Projects created for demonstration purposes.</p>
       </div>
 
       <div className="project-list">
@@ -320,8 +333,8 @@ function Work() {
               className="project-link"
               href={project.href}
               aria-label={`Open ${project.title}`}
-              target={project.href === '#' ? undefined : '_blank'}
-              rel={project.href === '#' ? undefined : 'noreferrer'}
+              target={project.href === "#" ? undefined : "_blank"}
+              rel={project.href === "#" ? undefined : "noreferrer"}
             >
               <div className="project-meta">
                 <span>{project.number}</span>
@@ -335,7 +348,10 @@ function Work() {
                 ))}
               </div>
             </a>
-            <div className={`project-preview ${project.preview}`} aria-hidden="true">
+            <div
+              className={`project-preview ${project.preview}`}
+              aria-hidden="true"
+            >
               {project.image ? (
                 <img src={project.image} alt="" />
               ) : (
@@ -358,7 +374,10 @@ function Contact() {
     <section className="contact section" id="contact">
       <div className="contact-inner reveal">
         <p className="eyebrow">Let&apos;s build something</p>
-        <h2>Available for front-end roles, collaborations, and portfolio-worthy ideas.</h2>
+        <h2>
+          Available for front-end roles, collaborations, and portfolio-worthy
+          ideas.
+        </h2>
         <div className="contact-links">
           <a className="magnetic" href="mailto:anteatolic73@icloud.com">
             <Mail size={18} aria-hidden="true" />
@@ -390,8 +409,8 @@ function Contact() {
   );
 }
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );
