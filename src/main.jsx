@@ -14,6 +14,17 @@ import "./styles.css";
 const projects = [
   {
     number: "01",
+    title: "Ironline Construction",
+    category: "Business Website",
+    description:
+      "A responsive construction company website focused on clear services, strong visual direction, and a direct contact path.",
+    tags: ["React", "Business Site", "Responsive", "Contact UI"],
+    preview: "preview-ironline",
+    image: "/assets/ironline-construction.png",
+    href: "https://zesty-biscuit-a75d37.netlify.app",
+  },
+  {
+    number: "02",
     title: "Sweet Frost",
     category: "E-commerce UI",
     description:
@@ -24,7 +35,7 @@ const projects = [
     href: "https://icecreamshop-theta.vercel.app/",
   },
   {
-    number: "02",
+    number: "03",
     title: "Lumora",
     category: "Finance Dashboard",
     description:
@@ -35,7 +46,7 @@ const projects = [
     href: "https://lumora-coral.vercel.app",
   },
   {
-    number: "03",
+    number: "04",
     title: "Kind Rituals",
     category: "Luxury Landing Page",
     description:
@@ -44,16 +55,6 @@ const projects = [
     preview: "preview-kind-rituals",
     image: "/assets/kind-rituals.png",
     href: "https://kind-rituals.vercel.app",
-  },
-  {
-    number: "04",
-    title: "Ironline Construction",
-    category: "Business Website",
-    description:
-      "A responsive construction company website focused on clear services, professional presentation, and a direct contact path.",
-    tags: ["React", "Business Site", "Responsive", "Contact UI"],
-    preview: "preview-ironline",
-    href: "https://zesty-biscuit-a75d37.netlify.app",
   },
 ];
 
