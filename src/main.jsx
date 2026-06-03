@@ -45,6 +45,16 @@ const projects = [
     image: "/assets/kind-rituals.png",
     href: "https://kind-rituals.vercel.app",
   },
+  {
+    number: "04",
+    title: "Ironline Construction",
+    category: "Business Website",
+    description:
+      "A responsive construction company website focused on clear services, professional presentation, and a direct contact path.",
+    tags: ["React", "Business Site", "Responsive", "Contact UI"],
+    preview: "preview-ironline",
+    href: "https://zesty-biscuit-a75d37.netlify.app",
+  },
 ];
 
 const skills = [

@@ -580,6 +580,10 @@ h1 {
   background: #eee8de;
 }
 
+.preview-ironline {
+  background: linear-gradient(135deg, #1f2329, #d9a441);
+}
+
 .preview-one {
   background: linear-gradient(135deg, var(--teal), var(--sky));
 }
